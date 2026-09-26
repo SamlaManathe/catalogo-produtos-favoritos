@@ -1,59 +1,109 @@
-# CatalogoProdutosFavoritos
+<div align="center">
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.23.
+# ⭐ Catálogo de Produtos Favoritos
 
-## Development server
+> Aplicação web desenvolvida em **Angular** com consumo da **Fake Store API**, gerenciamento de favoritos e anotações personalizadas.
 
-To start a local development server, run:
+![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![FakeStore API](https://img.shields.io/badge/FakeStore_API-0A84FF?style=for-the-badge&logo=fastapi&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Em_Desenvolvimento-yellow?style=for-the-badge)
 
-```bash
-ng serve
+</div>
+
+---
+
+## 📌 Sobre o Projeto
+
+O **Catálogo de Produtos Favoritos** é o resultado do **Desafio em Squad** do módulo de Angular da **WoMakersCode**. 
+
+A proposta do projeto foi construir uma aplicação integrada dividida estrategicamente entre cinco pessoas desenvolvedoras, simulando um fluxo real de desenvolvimento colaborativo ágil com branches, code reviews e pull requests no GitHub.
+
+---
+
+## ✨ Funcionalidades Principais
+
+- 🛍️ **Vitrine de Produtos:** Listagem dinâmica dos produtos vindos da Fake Store API com imagem, título e preço.
+- 🔍 **Tela de Detalhes:** Navegação dinâmica por ID (`/item/:id`) exibindo a descrição completa, categoria e imagem ampliada do produto.
+- ❤️ **Gestão de Favoritos:** Possibilidade de favoritar e desfavoritar produtos, com estado compartilhado via serviços.
+- 📝 **Anotações de Motivo:** Formulário com validações para registrar por que determinado item virou favorito.
+
+---
+
+## 👥 Divisão de Tarefas do Squad
+
+O fluxo de desenvolvimento foi dividido em 5 frentes interdependentes:
+
+| Integrante | Papel / Responsabilidade | Tecnologias / Conceitos Praticados |
+| :--- | :--- | :--- |
+| **Pessoa 1** | **Estrutura Base:** Configuração de rotas, interface/model, `ProdutoService`, `HttpClient` e setup inicial. | `HttpClient`, `provideHttpClient`, `Routes`, Interfaces |
+| **Pessoa 2** | **Lista de Produtos:** Componente de vitrine, repetição dos cards e botão de favoritar. | `*ngFor`, Event Binding, Componentes |
+| **Pessoa 3** | **Tela de Detalhes:** Rota dinâmica com ID, busca de produto por ID e exibição detalhada com retorno. | `ActivatedRoute`, `RouterLink`, Ciclo de Vida |
+| **Pessoa 4** | **Sistema de Favoritos:** Serviço compartilhado de favoritos, inclusão/remoção e status. | Serviços Compartilhados, Lógica de Negócio |
+| **Pessoa 5** | **Formulário de Observação:** Formulário com validação para registrar o motivo do favorito. | `ReactiveForms` / `FormsModule`, `Validators` |
+
+---
+
+## 🌐 Integração com a API
+
+A aplicação consome a [Fake Store API](https://fakestoreapi.com/docs) através dos seguintes endpoints:
+
+- `GET /products`: Retorna a lista completa de produtos para a vitrine.
+- `GET /products/:id`: Retorna as informações detalhadas de um produto específico.
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **Angular (Standalone Components):** Arquitetura moderna sem a necessidade de `NgModule`.
+- **TypeScript:** Tipagem estática para os contratos de dados dos produtos.
+- **HTML5 & CSS3:** Interface responsiva em formato de cards flexíveis.
+- **Git & GitHub:** Fluxo colaborativo baseado em branches (`feature/*`), Pull Requests e revisões de código.
+
+---
+
+## 🚀 Como Executar o Projeto Localmente
+
+### Pré-requisitos
+- [Node.js](https://nodejs.org/) (versão 18+)
+- [Angular CLI](https://angular.dev/):
+  ```bash
+  npm install -g @angular/cli
+  ```
+
+  ---
+
+ ## Instalação
+
+1. Clone o repositório da equipe
+
+```
+git clone https://github.com/SamlaManathe/catalogo-produtos-favoritos.git
+
+```
+2. Entre no diretório do projeto:
+
+```
+cd catalogo-produtos-favoritos
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+3. Instale todas as dependências:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+4. Execute o servidor de desenvolvimento:
 
-```bash
-ng generate --help
+```
+npm start
 ```
 
-## Building
+5. Abra o navegador em: http://localhost:4200
 
-To build the project run:
+---
 
-```bash
-ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 👩‍💻 Integrantes da Squad
 
-## Running unit tests
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
