@@ -1,0 +1,20 @@
+<form [formGroup]="formulario" (ngSubmit)="salvar()">
+  <label for="motivo">Por que este produto é favorito?</label>
+
+  <textarea
+    id="motivo"
+    formControlName="motivo"
+    rows="4"
+    placeholder="Ex.: Gostei do preço e das avaliações."
+  ></textarea>
+
+  @if (motivo.touched && motivo.hasError('required')) {
+    <p class="erro">Escreva uma observação.</p>
+  }
+
+  @if (motivo.touched && motivo.hasError('minlength')) {
+    <p class="erro">Escreva pelo menos 5 caracteres.</p>
+  }
+
+  <button type="submit">Salvar observação</button>
+</form>

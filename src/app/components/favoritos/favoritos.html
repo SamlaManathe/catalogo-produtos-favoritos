@@ -1,0 +1,27 @@
+<h2>Meus favoritos</h2>
+
+@for (favorito of favoritos(); track favorito.id) {
+  <article>
+    <img [src]="favorito.image" [alt]="favorito.title" width="100" />
+
+    <h3>{{ favorito.title }}</h3>
+    <p>R$ {{ favorito.price }}</p>
+
+    <app-formulario-favorito
+      (observacaoSalva)="salvarObservacao(favorito.id, $event)"
+    />
+
+    @if (favorito.observacao) {
+      <p>
+        <strong>Minha observação:</strong>
+        {{ favorito.observacao }}
+      </p>
+    }
+
+    <button (click)="removerFavorito(favorito.id)">
+      Remover dos favoritos
+    </button>
+  </article>
+} @empty {
+  <p>Nenhum produto favoritado ainda.</p>
+}
