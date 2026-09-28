@@ -1,1 +1,34 @@
-<p>produto-detalhe works!</p>
+<div class="detalhes-container">
+  <!-- Botão de voltar para a página inicial -->
+  <a routerLink="/" class="btn-voltar">
+    ← Voltar para o catálogo
+  </a>
+
+  <!-- Mensagem de Carregando -->
+  <div *ngIf="carregando" class="estado-mensagem">
+    <p>Carregando detalhes do produto...</p>
+  </div>
+
+  <!-- Mensagem de Erro (se houver) -->
+  <div *ngIf="erro" class="estado-mensagem erro">
+    <p>{{ erro }}</p>
+  </div>
+
+  <!-- Card com os Detalhes do Produto -->
+  <div *ngIf="produto && !carregando" class="card-detalhe">
+    <div class="imagem-container">
+      <img [src]="produto.image" [alt]="produto.title" />
+    </div>
+
+    <div class="info-container">
+      <span class="categoria-tag">{{ produto.category }}</span>
+      <h1 class="titulo-produto">{{ produto.title }}</h1>
+      <p class="preco-produto">R$ {{ produto.price | number:'1.2-2' }}</p>
+      
+      <div class="descricao-secao">
+        <h3>Descrição</h3>
+        <p>{{ produto.description }}</p>
+      </div>
+    </div>
+  </div>
+</div>
