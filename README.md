@@ -106,4 +106,12 @@ npm start
 
 ## 👩‍💻 Integrantes da Squad
 
+Projeto desenvolvido pela Squad Ada Lovelace durante o Bootcamp de .NET da WoMakersCode.
 
+| Integrante | GitHub           |
+| ---------- | ---------------- |
+| Maria Vitória | [@espinola2007](https://github.com/espinola2007) |
+| Ana Carla | [@anacarlags](https://github.com/Anacarlags) |
+| Renata | [@renataaires](https://github.com/RenataAires) |
+| Thaislaine | [@httpthaes](https://github.com/httpthaes) |
+| Samla | [@samlamanathe](https://github.com/SamlaManathe) |
