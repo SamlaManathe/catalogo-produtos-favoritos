@@ -1,0 +1,15 @@
+form {
+  display: grid;
+  gap: 10px;
+  max-width: 500px;
+}
+
+textarea {
+  min-height: 90px;
+  padding: 8px;
+}
+
+.erro {
+  color: #b42318;
+  margin: 0;
+}
