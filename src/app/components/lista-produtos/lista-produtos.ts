@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Produto } from '../../models/produto';
+import { FavoritosService } from '../../services/favoritos.service';
 import { ProdutoService } from '../../services/produto';
+
 
 @Component({
   selector: 'app-lista-produtos',
@@ -18,6 +20,7 @@ export class ListaProdutos implements OnInit {
   erro = false;
 
   constructor(private produtoService: ProdutoService) {}
+  private favoritosService = inject(FavoritosService);
 
   ngOnInit(): void {
     this.produtoService.buscarProdutos().subscribe({
@@ -50,12 +53,16 @@ export class ListaProdutos implements OnInit {
   }
 
   toggleFavorito(produto: Produto): void {
-    //  chamar Favoritos
-    // ou removerFavorito aqui.
+    if (this.isFavorito(produto)) {
+      this.favoritosService.removerFavorito(produto.id);
+    } else {
+      this.favoritosService.adicionarFavorito(produto);
+    }
   }
 
   isFavorito(produto: Produto): boolean {
-    // Favoritos
-    return false;
+    return this.favoritosService
+      .favoritos()
+      .some((favorito) => favorito.id === produto.id);
   }
 }
