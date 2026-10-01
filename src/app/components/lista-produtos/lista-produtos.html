@@ -1,5 +1,4 @@
 <div class="lista-produtos">
-  <h2 class="titulo">Catálogo de Produtos</h2>
 
   <p *ngIf="carregando">Carregando produtos...</p>
   <p *ngIf="erro">Não foi possível carregar os produtos. Tente novamente mais tarde.</p>
@@ -10,7 +9,7 @@
 
       <div class="grid">
         <div class="card" *ngFor="let produto of categoria.produtos">
-          <a [routerLink]="['/produtos', produto.id]">
+          <a [routerLink]="['/item', produto.id]">
             <img [src]="produto.image" [alt]="produto.title" />
           </a>
 

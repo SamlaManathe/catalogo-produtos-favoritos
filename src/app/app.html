@@ -1,3 +1,15 @@
-<h1>Catálogo de Produtos Favoritos</h1>
+<header class="app-header">
+  <h1 class="app-titulo">Catálogo de Produtos Favoritos</h1>
+  <nav class="app-nav">
+    <a routerLink="/produtos" routerLinkActive="ativo">Produtos</a>
+    <a routerLink="/favoritos" routerLinkActive="ativo">Favoritos</a>
+  </nav>
+</header>
 
-<router-outlet></router-outlet>
+<main class="app-conteudo">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="app-footer">
+  <p>Projeto Angular — Squad Ada Lovelace</p>
+</footer>
